@@ -26,7 +26,23 @@ public function resources()
 // En el modelo Course
 public function comments()
 {
-    return $this->hasMany(Comment::class);
+   // return $this->hasMany(Comment::class);
+   // return $this->hasMany(Comment::class, 'course_id');
+    
+    return $this->hasMany(ForumPost::class, 'course_id'); // Asumiendo que el campo de clave foránea es 'course_id'
 }
+
+// En el modelo Course (app/Models/Course.php)
+
+public function evaluations()
+{
+    return $this->hasMany(Evaluation::class);
+}
+public function forumPosts()
+{
+    return $this->hasMany(ForumPost::class);
+}
+
+
 
 }

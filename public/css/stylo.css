@@ -1,9 +1,14 @@
 
-body {
-    color: #999999;
-    font-size: 14px;
-    font-family: 'Poppins', sans-serif
+/* Aumenta la duración de la animación fadeIn */
+.animate__fadeIn {
+    animation-duration: 2s; /* Aumenta la duración a 2 segundos (o el valor que desees) */
 }
+  /** con esta clase hacemos que funcione una animacion al escrolear  */
+.elemento {
+    opacity: 0;
+    transform: translateY(50px); /* Opcional: para mover el elemento hacia abajo */
+  }
+  
 /* Estilos CSS */
 .informacion-section {
     background-color: #f7f7f7;
@@ -15,7 +20,7 @@ body {
 /* Estilos para emoticonos */
 .emoticonos {
     font-size: 27px;
-    color: #f27c06; /* Color de emoticonos personalizado */
+    color: #ffd500; /* Color de emoticonos personalizado */
 }
 /** estilos para publicidad  */
 .advertisement {
@@ -125,6 +130,8 @@ h6 {
 }
 .navbar{
     background-color: #172132;
+    padding: -100px;
+    height: 90px;
 }
 .miApp{
     margin-top: 150px;
@@ -171,7 +178,9 @@ a{
     width:100%;
 }
 
-
+.navbar-nav{
+    margin-left: 100px;
+}
 
 .menunav {
     
@@ -181,26 +190,27 @@ a{
 	position: relative;
 	text-transform: capitalize;
     text-decoration: none;
+    
 
 }
  a.menunav{
    
-    color: rgb(174, 7, 168);
+    color:white;
 	letter-spacing: 1px;
 	font-size: 20px;
 	position: relative;
 	text-transform: capitalize;
     text-decoration: none;
     border-radius:40%;
+    box-shadow: #f7f7f7;
    
 }
 a.credenciales {
     text-decoration: none;
-    font-size: 20px;
-    letter-spacing: 1px;
+     letter-spacing: 0px;
 	font-size: 20px;
-	position: relative;
-	text-transform: capitalize;
+	position:sticky;
+	
 }
 a.credenciales:hover {
     text-decoration: none;
@@ -209,19 +219,7 @@ a.credenciales:hover {
    
 
 }
-.btn-info{
-    border-radius: 25%;
-    margin-left: 2px;
-    margin-right: 2px;
-    
-}
-.btn-info:hover{
-    border-radius: 25%;
-    margin-left: 2px;
-    margin-right: 2px;
-    
-    background: rgb(53, 6, 103);
-}
+
 
 a.menunav:hover{
 	color:white;
@@ -229,7 +227,7 @@ a.menunav:hover{
     font-weight:23px;
     font-size: 20.3px;
     transition: all 0.3s;
-    
+    text-decoration: none;
 }
 a.auth{
    
@@ -238,7 +236,15 @@ a.auth{
 .navbar-nav{
     
 }
-
+.btn-secondary{
+    height: 40px;
+    background-color: white;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.text-dark{
+    margin-top: -10px;
+}
 /* stylo para vista cursos */
 .cursos{
     border-style: inherit;
@@ -262,25 +268,51 @@ height: 25%;
    justify-content: center;
    margin-left: auto;
    margin-right:auto;
+   margin: 0 auto;
+   background-image: linear-gradient(to right top, #5bbc47, #af50bf, #b358c2, #c56060, #ba68c8);
 }
 .carrusel{
     box-shadow: #333;
-    background: rgb(174, 7, 168);
+
+
+
     
 }
-/**   footer estilos  */
-/* Estilos para pantallas pequeñas */
-@media (max-width: 768px) {
-    .social-icons {
-        text-align: center;
-    }
+.modalimg-article{
+    margin: 0 auto;
+    max-height: 300px; /* Altura máxima de las imágenes en dispositivos de escritorio */
 }
 
-/* Estilos para pantallas grandes */
+/* Estilos para el carrusel */
+.carousel {
+    margin-bottom: 30px; /* Espacio inferior entre el carrusel y otros elementos */
+}
+
+/* Estilos para las imágenes del carrusel */
+.carousel-item img {
+    width: 100%; /* Hace que las imágenes se ajusten al ancho del contenedor del carrusel */
+    height: auto; /* Mantendrá la relación de aspecto original de las imágenes */
+    max-height: 400px; /* Altura máxima de las imágenes en dispositivos de escritorio */
+    margin: 0 auto; /* Centra las imágenes horizontalmente */
+}
+
+/* Estilos para las leyendas del carrusel */
+.carousel-caption {
+ /*   background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente para las leyendas */
+  /*  color: #fff; /* Color de texto para las leyendas */
+    padding: 15px; /* Espaciado interior para las leyendas */
+}
+/* Estilos para dispositivos de escritorio */
 @media (min-width: 992px) {
-    .footer-content {
-        display: flex;
-        justify-content: space-between;
+    .carousel-item img {
+        width: 30%; /* Ancho del 30% en dispositivos de escritorio */
+        height: 30%; /* Alto del 30% en dispositivos de escritorio */
+        max-height: none; /* Restablece la altura máxima en dispositivos de escritorio */
+        margin: 0 auto; 
+        margin-top: 20px; /* Margen superior de 20px en dispositivos de escritorio */
+    }
+    .navbar-nav{
+    
     }
 }
 
@@ -298,7 +330,12 @@ height: 25%;
         margin-right: 2px;
         margin-top: 5px;
     }
-
+    .carousel-item img {
+        width: 70%; /* Hace que las imágenes se ajusten al ancho del contenedor del carrusel */
+        height: auto; /* Mantendrá la relación de aspecto original de las imágenes */
+        max-height: 200px; /* Altura máxima de las imágenes en dispositivos de escritorio */
+        margin: 0 auto; /* Centra las imágenes horizontalmente */
+    }
     /* stylo para la vista show */
 .imagenShow {
     width:60%; 
@@ -308,6 +345,18 @@ height: 25%;
    margin-right:auto;
 
  }
+ .navbar{
+    background-color: #172132;
+    padding: -100px;
+    height: auto;
+}
+.navbar-nav{
+    
+}
+.navbar-toggler:hover{
+height: auto;
+}
+
 }
 
   /** redes sociales barra  */
@@ -436,7 +485,7 @@ ul.menu-social li a[href*="whatsapp://send"]::before {
 
 .buttonshow{
     background:rgb(140, 59, 198);
-    color:#5fffff;
+    color:#ff5f5f;
     font-weight:400;
     font-size:18px;
     text-transform:uppercase;
@@ -450,7 +499,7 @@ ul.menu-social li a[href*="whatsapp://send"]::before {
 .buttonshow::before{
     content:"";
     position:absolute;
-    background:#3bd9d9;
+    background:#d9b23b;
     width:6px;
     top:0;
     bottom:0;
@@ -574,12 +623,22 @@ ul.menu-social li a[href*="whatsapp://send"]::before {
 	background-color: #fff;
 	line-height: 40px;
 }
+/** estilos para la vista de perfil */
 
-/************************  informacion modal sussces  */
+.card {
+    background-color: #f2f2f2;
+    border: 2px solid #930167;
+}
 
-@import url(https://fonts.googleapis.com/css?family=Calibri:400,300,700);
-.mt100{background: linear-gradient(to bottom, rgba(46, 46, 172, 0.63), rgba(151, 44, 201, 0.589));
-    font-family: 'Calibri', sans-serif !important}.mt-100{margin-top: 100px}.modal-button{background-color: rgb(29, 226, 226);border-color: rgb(29, 226, 226);
-    border-radius: 6px;color: white;font-size: 17px;padding-right: 76px;padding-left: 76px}.cardf{border-radius: 3vh;margin: auto;max-width: 380px;padding: 7vh 6vh;
-    align-items: center;box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19)}@media(max-width:767px){.cardf{width: 90vw}}.card-imgf{padding: 20px 0;width: 40%}.card-img .img{opacity: 0.7}.card-titlef{margin-bottom: unset}.card-titlef .p{color: rgb(29, 226, 226);font-weight: 900;font-size: 30px;margin-bottom: unset}.card-textf .r{color: grey;font-size: 25px;text-align: center;padding: 3vh 0;font-weight: lighter}.btnd{width: 100%;background-color: rgb(29, 226, 226);border-color: rgb(29, 226, 226);border-radius: 25px;color: white;font-size: 20px}.btn:focus{box-shadow: none;outline: none;box-shadow: none;color: white;-webkit-box-shadow: none;-webkit-user-select: none;transition: none}.btnd:hover{color: rgb(28, 62, 255)}
+.card-header {
+    background-color: #930167;
+    color: white;
+}
+#profile_photo {
+    display: block;
+    margin: 0 auto;
+    max-width: 200px; /* Ajusta el tamaño máximo de la imagen según tu preferencia */
+    border: 2px solid #930167; /* Agrega un borde a la imagen */
+}
+
 

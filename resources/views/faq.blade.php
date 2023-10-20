@@ -1,52 +1,57 @@
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-<link href="{{ asset('css/app.css') }}" rel="stylesheet">
-<link rel="stylesheet" href="{{ asset('css/stylo.css') }}">
-<link rel="stylesheet" href="{{ asset('node_modules/bootstrap/dist/css/bootstrap.css') }}">
-
-<!-- Vista FAQ (faq.blade.php) -->
- <!-- Extiende el diseño de tu sitio web -->
 @extends('layouts.app')
 
+@section('content')
+<div class="faq-container miApp">
+    <h2>Preguntas Frecuentes</h2>
+    <div class="faq-list">
+        @foreach($faqs as $faq)
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span class="faq-icon">+</span>
+                    <strong>Pregunta:</strong> {{$faq->pregunta}}
+                </div>
+                <div class="faq-answer">
+                    <strong>Respuesta:</strong> {{$faq->respuesta}}
+                </div>
+            </div>
+        @endforeach
+    </div>
+</div>
+
+<script>
+    // Script para controlar el plegado/plegado de respuestas
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+
+        question.addEventListener('click', () => {
+            item.classList.toggle('active');
+        });
+    });
+</script>
+
 <style>
-    .faq-container {
-        margin: 20px;
-        margin-top: 300px;
+    /* Estilos adicionales para el efecto de plegado/plegado */
+    .faq-question {
+        cursor: pointer;
     }
 
-    .faq-item {
-        margin-bottom: 20px;
-        padding: 10px;
-        border: 1px solid #ccc;
-        background-color: #f9f9f9;
+    .faq-icon {
+        display: inline-block;
+        margin-right: 10px;
     }
 
-    .question {
-        font-weight: bold;
-        color: #333;
+    .faq-item.active .faq-answer {
+        display: block;
     }
 
-    .answer {
+    .faq-answer {
+        display: none;
         margin-top: 10px;
         color: #666;
     }
 </style>
-
-   
-   @section('content')
-    <div class="faq-container miApp">
-        <h2>Preguntas Frecuentes</h2>
-        <ul class="faq-list">
-            @foreach($faqs as $faq)
-                <li class="faq-item">
-                    <div class="question"><strong>Pregunta:</strong> {{$faq->pregunta}}</div>
-                    <div class="answer"><strong>Respuesta:</strong> {{$faq->respuesta}}</div>
-                </li>
-            @endforeach
-        </ul>
-    </div>
 @endsection
+
