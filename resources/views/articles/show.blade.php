@@ -7,8 +7,6 @@
        
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-    </head>
-<body>
 
        
         @extends('layouts.app')
@@ -16,13 +14,19 @@
 <!-- Contenido de la vista show.blade.php -->
 
 <!-- Resto del contenido del artículo -->
-<div class="container miApp">
+<div class="container miApp ">
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container col-8 justify-content-lg-start"><img src="{{ asset($article->imagen) }}" alt="{{ $article->title }}" class="featured-image ">
+    </div>
     <!-- Imagen destacada -->
-    <img src="{{ asset($article->imagen) }}" alt="{{ $article->title }}" class="featured-image">
+    
 
     <!-- Título del artículo -->
-    <h1>{{ $article->title }}</h1>
-
+    <h2>{{ $article->title }}</h2>
+    <h5 class="card-title">{{ $article->description }}</h5>
     <!-- Fecha de publicación -->
     <p class="published-date">{{ $article->created_at->format('d/m/Y') }}</p>
 

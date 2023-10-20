@@ -72,11 +72,9 @@
                         <li class="nav-item">
                             <a href="{{ url('/cursos') }}" class=" js-scroll-trigger  ml-2 text-sm text-gray-700 dark:text-gray-500 underline menunav">cursos</a>
                         </li>
+                       
                         <li class="nav-item">
-                            <a href="{{ url('/foro') }}" class=" js-scroll-trigger  ml-2 text-sm text-gray-700 dark:text-gray-500 underline menunav">foro</a>   
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ url('/clases') }}" class=" js-scroll-trigger  ml-2 text-sm text-gray-700 dark:text-gray-500 underline menunav">clases</a>   
+                            <a href="{{ url('/clases') }}" class=" js-scroll-trigger  ml-2 text-sm text-gray-700 dark:text-gray-500 underline menunav">Biblioteca</a>   
                         </li>
                        
                     </ul>

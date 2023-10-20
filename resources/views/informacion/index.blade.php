@@ -33,7 +33,44 @@
     
 
 
-
+    <style>
+        body {
+          font-family: 'Nunito', sans-serif;
+          background-color: #f7f7f7;
+        }
+      
+        .container {
+          background-color: #fff;
+          padding: 20px;
+          border-radius: 5px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+      
+        h3 {
+          color: #333;
+        }
+      
+        p {
+          margin: 10px 0;
+        }
+      
+        ul {
+          list-style-type: disc;
+          margin-left: 20px;
+        }
+      
+        ul li {
+          margin: 5px 0;
+        }
+      
+        /* Estilo para valores */
+        .valores {
+          background-color: #f2f2f2;
+          padding: 10px;
+          border-radius: 5px;
+        }
+      </style>
+      
 
    
 </div>    

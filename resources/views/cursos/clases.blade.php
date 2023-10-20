@@ -21,7 +21,9 @@
                 <hr>
                   <h4></h4>
 <div class="row"> 
-    <div class="col-md-12 col-12" id="resource-container"></div>
+    <div class="col-md-12 col-12" id="resource-container">
+
+    </div>
 </div>
                  
                   
@@ -180,9 +182,8 @@
     height: 100%;
 }
 
-#resource-container{
 
-}
+
 /* Estilo para hacer que los PDF sean responsivos */
 iframe[src*="pdf"] {
     width: 100%;

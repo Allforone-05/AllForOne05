@@ -8,5 +8,5 @@
 
 @extends('layouts.app')
 @section('content')
-clases
+
 @endsection
