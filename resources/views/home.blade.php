@@ -94,7 +94,7 @@
     </div>
    
 </div>
- 
+ <br> <br>
 
 <!-- Publicidad para promocionar cursos en la vista home -->
 <div class="advertisement-container animate__animated animate__slideInDown">
@@ -280,10 +280,7 @@
             <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
                 <img src="{{ asset($course->imagen) }}" alt="{{ $course->titulo }}" class="img-fluid d-none d-md-block">
                 <div class="carousel-caption">
-                    <h3>{{ $course->titulo }}</h3>
-                   <p>{{ $course->descripcion }}</p> 
-
-                   
+                  
                    @auth
                    <a href="{{ route('cursos.show',  $course->id) }}" class="btn btn-success curso-link" data-curso-id="{{  $course->id }}">
                        Acceder al curso
